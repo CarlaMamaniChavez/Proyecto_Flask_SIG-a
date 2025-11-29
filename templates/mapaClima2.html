@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Mapa Meteorológico con Leaflet y OpenWeatherMap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/style_Clima2.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <h2>Capas Meteorológicas</h2>
+    <button class="btn" id="btnNubes">☁️ Nubes</button>
+    <button class="btn" id="btnTemp">🌡️ Temperatura</button>
+    <button class="btn" id="btnViento">💨 Viento</button>
+    <button class="btn" id="btnLluvia">🌧️ Precipitaciones</button>
+    <div id="weatherInfo">Haz clic en el mapa<br>para ver el clima.</div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/script_clima2.js"></script>
+  
+</body>
+</html>

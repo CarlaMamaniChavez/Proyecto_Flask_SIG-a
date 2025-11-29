@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Mapa con OSRM y panel lateral</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/style_mapa.css" />
+  </head>
+<body>
+
+<div id="container">
+  <!-- Panel lateral -->
+  <div id="sidebar">
+    <h3 class="texto">Mis Rutas</h3>
+
+    <!-- expone user_id para JS -->
+    <div id="app" data-user-id="{{ user_id }}" style="visibility:hidden;"></div>
+    
+    <!-- Distancia mostrada al calcular -->
+    <div id="distancia" style="color: white;">Distancia: —</div>
+
+    <!-- listado de rutas (usa Jinja). Cada item incluye attributes data con coordenadas -->
+    <div id="rutas">
+      {% if fila %}
+        {% for item in fila %}
+          <div class="ruta-item" data-id="{{ item.id }}"
+               data-latinicio="{{ item.latitudinicio }}" data-lnginicio="{{ item.longitudinicio }}"
+               data-latdestino="{{ item.latituddestino }}" data-lngdestino="{{ item.longituddestino }}"
+               tabindex="0" role="button">
+            <strong>Ruta {{ item.id }}</strong><br>
+            Inicio: {{ item.latitudinicio }}, {{ item.longitudinicio }}<br>
+            Destino: {{ item.latituddestino }}, {{ item.longituddestino }}<br>
+            <hr>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div>No hay rutas guardadas.</div>
+      {% endif %}
+    </div>
+
+    
+  </div>
+
+  <!-- Mapa -->
+  <div id="map"></div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/static/script_mis_rutas.js"></script>
+
+</body>
+</html>

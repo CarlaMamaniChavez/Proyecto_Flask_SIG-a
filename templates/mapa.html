@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa con OSRM y panel lateral</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/style_mapa.css" />
+</head>
+<body>
+
+<div id="container">
+    <!-- Panel lateral -->
+    <div id="sidebar">
+        
+    <h3 class="texto">Control de Ruta</h3>
+    <div id="app" data-user-id="{{ user_id }}" style="visibility: hidden;"></div>
+
+    <div>
+        <button id="btnInicio">📍 Marcar inicio</button>
+        <button id="btnDestino">🎯 Marcar destino</button>
+        <button id="zoomBtn">🔍 Ir al marcador activo</button>
+    </div>
+    <div>
+        <h4 class="texto">Buscar Coordenadas</h4>
+        <input type="text" id="latInput" placeholder="Latitud">
+        <input ty pe="text" id="lngInput" placeholder="Longitud">
+        <button id="buscarBtn">📌 Buscar</button>
+        <button id="btnClima">Clima</button>
+    </div>
+    
+    <div id="distancia" style="color: white;">Distancia: —</div>
+    <button id="GuardarRutaBtn" class="btn">Guardar Ruta</button>
+    <button id="MisRutasBtn" class="btn">Mis Rutas</button>
+    
+</div>
+    
+    <!-- Mapa -->
+    <div id="map"></div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="/static/script_mapa.js"></script>
+
+
+
+</body>
+</html>

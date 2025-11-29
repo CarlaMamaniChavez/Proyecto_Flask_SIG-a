@@ -1,0 +1,62 @@
+html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #map {
+      height: 100%;
+      width: calc(100% - 250px);
+      margin-left: 250px;
+    }
+
+    /* Panel lateral */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background: #1e293b;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #sidebar h2 {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+      background: #334155;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #475569;
+    }
+
+    .btn.active {
+      background: #0ea5e9;
+    }
+
+    #weatherInfo {
+      margin-top: auto;
+      background: rgba(255,255,255,0.15);
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
